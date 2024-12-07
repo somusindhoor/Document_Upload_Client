@@ -97,14 +97,16 @@ const Login = () => {
               type={showPassword ? "text" : "password"}
               fullWidth
               required
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton onClick={handleTogglePassword} edge="end">
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                ),
+              slotProps={{
+                input: {
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton onClick={handleTogglePassword} edge="end">
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                },
               }}
               sx={{ mb: 3 }}
             />
@@ -114,6 +116,7 @@ const Login = () => {
               color="primary"
               fullWidth
               disabled={loading}
+              sx={{borderRadius:"var(--primary-border-radius)"}}
             >
               Sign In
             </Button>
@@ -134,7 +137,7 @@ const Login = () => {
             mt={2}
             color="text.secondary"
           >
-            Don’t have an account? <a href="/signup">Sign Up</a>
+            Don’t have an account? <a href="/upload-documents/signup">Sign Up</a>
           </Typography>
         </Box>
       </Container>

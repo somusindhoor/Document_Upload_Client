@@ -136,6 +136,7 @@ const SignUp = () => {
               color="primary"
               fullWidth
               disabled={loading}
+              sx={{borderRadius:"var(--primary-border-radius)"}}
             >
               Sign Up
             </Button>
@@ -159,7 +160,7 @@ const SignUp = () => {
             mt={2}
             color="text.secondary"
           >
-            Already have an account? <a href="/login">Log in</a>
+            Already have an account? <a href="/upload-documents/login">Log in</a>
           </Typography>
         </Box>
       </Container>
